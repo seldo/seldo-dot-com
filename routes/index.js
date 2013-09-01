@@ -1,8 +1,10 @@
-
-/*
- * GET home page.
+/**
+ * TODO: sort out GET vs POST etc.
  */
 
-exports.index = function(req, res){
-  res.render('index', { title: 'Express' });
+var blog = require('../controllers/blog')
+
+module.exports = function(app){
+  app.get('/',blog.index)
+  app.get('/blog/:yyyy/:mm/:dd/:title',blog.show)
 };
