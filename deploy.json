@@ -1,0 +1,35 @@
+{
+  "resources": {
+    "gateway": {
+      "template": "nginx-balancer",
+      "connect-to": ["web"]
+    },
+    "web": {
+      "template": "nodejs",
+      "location": "services/web",
+      "scripts": {
+        "start": "node app"
+      }
+    },
+    "auth": {
+      "template": "nodejs",
+      "location": "bundled",
+      "scripts": {
+        "start": "node app"
+      }
+    },
+    "mongo": {
+      "template": "mongodb"
+    }
+  },
+  "environments": {
+    "development": {
+      "web": {
+        "port": "8080"
+      },
+      "auth": {
+        "port": "8081"
+      }
+    }
+  }
+}
