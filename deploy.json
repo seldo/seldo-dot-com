@@ -1,25 +1,19 @@
 {
   "resources": {
     "gateway": {
-      "template": "nginx-balancer",
+      "template": "thinkstack/nginx-balancer",
       "connect-to": ["web"]
     },
     "web": {
-      "template": "nodejs",
-      "location": "services/web",
-      "scripts": {
-        "start": "node app"
-      }
+      "template": "thinkstack/nodejs",
+      "location": "services/web"
     },
     "auth": {
-      "template": "nodejs",
-      "location": "bundled",
-      "scripts": {
-        "start": "node app"
-      }
+      "template": "thinkstack/nodejs",
+      "location": "services/auth"
     },
     "mongo": {
-      "template": "mongodb"
+      "template": "thinkstack/mongodb"
     }
   },
   "environments": {
