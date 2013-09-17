@@ -1,28 +1,29 @@
 {
-  "resources": {
-    "gateway": {
+  "services": {
+    "balancer": {
       "pattern": "thinkstack/nginx-balancer",
-      "connect-to": ["web"]
+      "expose": ["80"]
     },
     "web": {
       "pattern": "thinkstack/nodejs",
+      "expose": ["8080"],
       "location": "services/web"
     },
     "auth": {
       "pattern": "thinkstack/nodejs",
+      "expose": ["9001"],
       "location": "services/auth"
     },
     "mongo": {
-      "pattern": "thinkstack/mongodb"
+      "pattern": "thinkstack/mongodb",
+      "expose": ["27017"]
     }
   },
   "environments": {
     "development": {
       "web": {
-        "port": "8080"
       },
       "auth": {
-        "port": "8081"
       }
     }
   }
