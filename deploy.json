@@ -1,19 +1,19 @@
 {
   "resources": {
     "gateway": {
-      "template": "thinkstack/nginx-balancer",
+      "pattern": "thinkstack/nginx-balancer",
       "connect-to": ["web"]
     },
     "web": {
-      "template": "thinkstack/nodejs",
+      "pattern": "thinkstack/nodejs",
       "location": "services/web"
     },
     "auth": {
-      "template": "thinkstack/nodejs",
+      "pattern": "thinkstack/nodejs",
       "location": "services/auth"
     },
     "mongo": {
-      "template": "thinkstack/mongodb"
+      "pattern": "thinkstack/mongodb"
     }
   },
   "environments": {
