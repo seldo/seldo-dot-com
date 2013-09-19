@@ -23,6 +23,6 @@ server {
 
 # the IPs/ports on which the web node app is running
 upstream service_web {
-    server 127.0.0.1:8080;
+    server 192.168.1.2:3000;
 }
 

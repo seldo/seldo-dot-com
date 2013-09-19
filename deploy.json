@@ -1,7 +1,7 @@
 {
-  "services": {
+  "resources": {
     "balancer": {
-      "pattern": "thinkstack/nginx-balancer",
+      "container": "thinkstack/nginx-balancer-0.0.3",
       "expose": ["80"]
     },
     "web": {
